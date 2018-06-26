@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
         cv2.putText(image, "FPS: %f" % (1.0 / (time.time() - fps_time)), (10, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         #cv2.imwrite("./image.png", image)
-        print(str(image.size()))
+        #print(str(image.size()))
         out.write(image)
         #display(Image('./image.png'))
         #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
