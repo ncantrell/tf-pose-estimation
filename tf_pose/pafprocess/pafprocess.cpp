@@ -12,7 +12,7 @@ using namespace std;
 vector<vector<float> > subset;
 vector<Peak> peak_infos_line;
 
-int round(float v);
+//int round(float v);
 vector<VectorXY> get_paf_vectors(float *pafmap, const int& ch_id1, const int& ch_id2, int& f2, int& f3, Peak& peak1, Peak& peak2);
 bool comp_candidate(ConnectionCandidate a, ConnectionCandidate b);
 
