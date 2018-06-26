@@ -34,6 +34,10 @@ if __name__ == '__main__':
     w, h = model_wh(args.resolution)
     e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h))
     cap = cv2.VideoCapture(args.video)
+    frame_width = int(cap.get(3))
+    frame_height = int(cap.get(4))
+    fourcc = cv.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter('./video_out.avi',fourcc, 10.0, (frame_width,frame_height))
 
     if cap.isOpened() is False:
         print("Error opening video stream or file")
@@ -47,11 +51,13 @@ if __name__ == '__main__':
 
         cv2.putText(image, "FPS: %f" % (1.0 / (time.time() - fps_time)), (10, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         #cv2.imwrite("./image.png", image)
+        print(image.size())
+        out.write(image)
         #display(Image('./image.png'))
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        plt.imshow(image)
-        plt.title('pose estimate')
-        plt.show()
+        #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        #plt.imshow(image)
+        #plt.title('pose estimate')
+        #plt.show()
 
         #cv2.imshow('tf-pose-estimation result', image)
         fps_time = time.time()
