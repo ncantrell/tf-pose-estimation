@@ -36,7 +36,7 @@ if __name__ == '__main__':
     cap = cv2.VideoCapture(args.video)
     frame_width = int(cap.get(3))
     frame_height = int(cap.get(4))
-    fourcc = cv.VideoWriter_fourcc(*'XVID')
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('./video_out.avi',fourcc, 10.0, (frame_width,frame_height))
 
     if cap.isOpened() is False:
