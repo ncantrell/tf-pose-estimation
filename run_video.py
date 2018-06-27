@@ -62,10 +62,10 @@ if __name__ == '__main__':
         #plt.title('pose estimate')
         #plt.show()
 
-        #cv2.imshow('tf-pose-estimation result', image)
+        cv2.imshow('tf-pose-estimation result', image)
         fps_time = time.time()
-        #if cv2.waitKey(1) == 27:
-        #    break
+        if cv2.waitKey(1) == 27:
+            break
 #
-#    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
 #logger.debug('finished+')
