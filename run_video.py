@@ -37,7 +37,7 @@ if __name__ == '__main__':
     frame_width = int(cap.get(3))
     frame_height = int(cap.get(4))
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter('./video_out.avi',fourcc, 30.0, (frame_width,frame_height))
+    out = cv2.VideoWriter('./video_out.avi',fourcc, 60.0, (frame_width,frame_height))
 
     if cap.isOpened() is False:
         print("Error opening video stream or file")
