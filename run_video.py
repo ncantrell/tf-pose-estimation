@@ -45,7 +45,7 @@ if __name__ == '__main__':
     while cap.isOpened():
         ret_val, image = cap.read()
 
-        humans = e.inference(image)
+        humans = e.inference (image, upsample_size = 4.0)
         if not args.showBG:
             image = np.zeros(image.shape)
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
