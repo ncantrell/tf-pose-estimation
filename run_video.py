@@ -41,6 +41,7 @@ if __name__ == '__main__':
 
     if cap.isOpened() is False:
         print("Error opening video stream or file")
+    i = 0;
     while cap.isOpened():
         ret_val, image = cap.read()
 
@@ -53,6 +54,7 @@ if __name__ == '__main__':
         #cv2.imwrite("./image.png", image)
         #print(str(image.size()))
         out.write(image)
+        print(str(i))
         #display(Image('./image.png'))
         #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         #plt.imshow(image)
