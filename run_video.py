@@ -55,6 +55,7 @@ if __name__ == '__main__':
         #print(str(image.size()))
         out.write(image)
         print(str(i))
+        i=i+1
         #display(Image('./image.png'))
         #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         #plt.imshow(image)
